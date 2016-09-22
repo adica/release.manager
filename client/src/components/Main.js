@@ -6,21 +6,19 @@ import React from 'react';
 import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBar from './AppBar.js';
-import Search from './Search.js';
-
-
+//import Search from './Search.js';
+import ApplicationSelect from './ApplicationSelect.js';
 
 class AppComponent extends React.Component {
 
   getChildContext() {
     return { muiTheme: getMuiTheme(baseTheme) };
   }
-  render() {
-    return (
+  render(){
+      return (
     	<div>
-    		<AppBar />
-    		<Search />
-    		
+    		<AppBar /> 
+        <ApplicationSelect />   		    		
     	</div>
     	
     	
