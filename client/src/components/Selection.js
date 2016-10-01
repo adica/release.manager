@@ -2,17 +2,26 @@ import React, {Component} from 'react';
 import {Card,  CardHeader, CardText} from 'material-ui/Card';
 import DDMI from './DropDownMenuItem.js';
 
-class ApplicationSelct extends Component {
+class Selection extends Component {
+
+  static propTypes = {
+    data: React.PropTypes.array
+  }
+
+  constructor(props) {
+    super(props);
+  }
 
   render(){
-    const list = [{ 'key' : 1, 'val' : 'a'}, { 'key' : 2, 'val' : 'b'}];
+    const list = this.props.listOfItems,
+          title = this.props.title;
     return (
       <div style={{padding: '14px 24px 24px'}}>
         <Card>
           <CardHeader
-            title="Choose Application"
+            title={title}
             subtitle=""
-          />    
+          />
           <CardText>
            <DDMI data={list} />
           </CardText>
@@ -22,4 +31,4 @@ class ApplicationSelct extends Component {
   }
 }
 
-export default ApplicationSelct;
+export default Selection;

@@ -7,7 +7,8 @@ import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBar from './AppBar.js';
 //import Search from './Search.js';
-import ApplicationSelect from './ApplicationSelect.js';
+//import ApplicationSelect from './ApplicationSelect.js';
+import Selection from './Selection.js';
 
 class AppComponent extends React.Component {
 
@@ -15,10 +16,13 @@ class AppComponent extends React.Component {
     return { muiTheme: getMuiTheme(baseTheme) };
   }
   render(){
+    const appList = [{ 'key' : 'sarine.viewer.templates.widget', 'val' : 'BASEWIDGET'},{ 'key' : 'sarine.viewer.templates.dashboard', 'val' : 'BASEDASHBOARD'}];
+    const envList = [{ 'key' : 'qa4', 'val' : 'QA4'},{ 'key' : 'stg1', 'val' : 'STG'},{ 'key' : 'prod1', 'val' : 'PROD'}]
       return (
     	<div>
-    		<AppBar /> 
-        <ApplicationSelect />   		    		
+    		<AppBar />
+        <Selection title="Choose Application" listOfItems={appList}/>
+        <Selection title="Choose Environment" listOfItems={envList}/>
     	</div>
     	
     	
