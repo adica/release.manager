@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import {Card, CardMedia, CardTitle} from 'material-ui/Card';
+import {Card,CardActions, CardMedia, CardTitle} from 'material-ui/Card';
+import RaisedButton from 'material-ui/RaisedButton';
+import Radium from 'radium';
 
 class Selection extends Component {
 
@@ -14,21 +16,30 @@ class Selection extends Component {
   render(){
     const list = this.props.listOfItems,
           compoenentStyle = {
-            padding: '14px 24px',
-            maxWidth: '300px',
-            float: 'left'
+            base: {
+              margin: '14px 24px',
+              maxWidth: '300px',
+              float: 'left', 
+              ':hover': {
+                boxShadow: '0 10px 40px #878787',
+                cursor: 'pointer'
+              }  
+            }
           };
 
     return (
       <div>
         {list.map((item) => {
-          return <div key={item.key} style={compoenentStyle}>
+          return <div key={item.key} style={compoenentStyle.base}>
             <Card>  
-              <CardMedia
-                overlay={<CardTitle title={item.val} subtitle={item.desc} />}
-              >
+              <CardMedia>
                 <img src={'/images/' + item.icon} />
-              </CardMedia>       
+              </CardMedia>  
+               <CardTitle title={item.val} subtitle={item.desc} />    
+              <CardActions>
+                  <RaisedButton label="Release" />
+                  <RaisedButton label="Deploy" />
+              </CardActions>
             </Card>
           </div>
         })}
@@ -37,4 +48,4 @@ class Selection extends Component {
   }
 }
 
-export default Selection;
+export default Radium(Selection);
