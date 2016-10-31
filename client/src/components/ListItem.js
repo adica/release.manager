@@ -18,12 +18,13 @@ class Selection extends Component {
           compoenentStyle = {
             base: {
               margin: '14px 24px',
-              maxWidth: '300px',
-              float: 'left', 
+              maxWidth: '250px',
+              height: '390px',
+              float: 'left',
               ':hover': {
                 boxShadow: '0 10px 40px #878787',
                 cursor: 'pointer'
-              }  
+              }
             }
           };
 
@@ -31,14 +32,14 @@ class Selection extends Component {
       <div>
         {list.map((item) => {
           return <div key={item.key} style={compoenentStyle.base}>
-            <Card>  
+            <Card>
               <CardMedia>
                 <img src={'/images/' + item.icon} />
-              </CardMedia>  
-               <CardTitle title={item.val} subtitle={item.desc} />    
+              </CardMedia>
+               <CardTitle title={item.val} subtitle={item.desc} />
               <CardActions>
                   <RaisedButton label="Release" />
-                  <RaisedButton label="Deploy" />
+                  <RaisedButton label="Deploy" href="#deploy" />
               </CardActions>
             </Card>
           </div>

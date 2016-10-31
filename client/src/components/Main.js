@@ -18,7 +18,6 @@ class AppComponent extends React.Component {
   }
   render(){
     const appList = api.apps;
-    const envList = api.envs;
       return (
     	<div>
     		<AppBar />

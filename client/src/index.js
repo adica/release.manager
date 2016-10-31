@@ -1,7 +1,9 @@
 import 'core-js/fn/object/assign';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Router, Route, hashHistory} from 'react-router';
 import App from './components/Main';
+import DeployComponent from './components/DeployComponent';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 // Needed for onTouchTap
@@ -9,4 +11,11 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 // Render the main component into the dom
-ReactDOM.render(<App />, document.getElementById('app'));
+//ReactDOM.render(<App />, document.getElementById('app'));
+
+ReactDOM.render((
+    <Router history={hashHistory}>
+        <Route path="/" component={App} />
+        <Route path="/deploy" component={DeployComponent} />
+    </Router>
+), document.getElementById('app'));
