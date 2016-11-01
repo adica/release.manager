@@ -18,6 +18,9 @@ class DeployComponent extends React.Component {
   }
 
   render() {
+    //const data = this.props;
+    //console.log(JSON.parse(this.props.appList.type));
+
     return (
     	<div>
     		<AppBar />
