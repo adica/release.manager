@@ -7,7 +7,7 @@ import AppBar from './AppBar.js';
 import ComponentDetails from './ComponentDetails.js';
 import {Card, CardActions, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
-
+import api from './../stores/api.js';
 
 require('styles//Deploy.css');
 
@@ -18,23 +18,19 @@ class DeployComponent extends React.Component {
   }
 
   render() {
-    //const data = this.props;
-    //console.log(this.props.appList.type);
-    //console.log(this.props.routeParams.name);
-    //const component = this.props.appList.type.filter((item)=> item.val == this.props.routeParams.name);
-    //console.log(component)
-
+    const component = api.findAppByName(this.props.params.name)
+    
     return (
     	<div>
     		<AppBar />
       		<div className="deploy-component">
         		<Card>
 				    <CardMedia>
-				      <img src="/images/Roundicons-54.svg" height="250" />
+				      <img src={'/images/' + component.icon} height="250" />
 				    </CardMedia>
-				    <CardTitle title="Base Jewerly" subtitle="Base Jewelry Component" />
+				    <CardTitle title={component.val} subtitle={component.desc} />
 				    <CardText>
-				      <ComponentDetails />
+				      <ComponentDetails details={component} />
 				    </CardText>
 				    <CardActions>
 				      <RaisedButton label="Deploy Version" />
