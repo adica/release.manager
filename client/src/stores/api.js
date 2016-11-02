@@ -7,6 +7,13 @@ exports.envs = [
 	{ 'key' : 'prod1', 'val' : 'PROD'}
 ];
 
+exports.findAppByName = function (name) {
+  return this.apps.filter((app)=> {
+    return app.val === name;
+  })[0];
+};
+
+
 exports.apps = [
       {
         'key' : 'sarine.viewer.templates.widget',
