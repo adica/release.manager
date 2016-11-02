@@ -22,7 +22,7 @@ ReactDOM.render((
     	<Route path="/" component={Container}>
     		<IndexRoute component={App} />
         	<Route path="/app" component={App} />
-        	<Route path="/deploy" component={DeployComponent}>
+        	<Route path="/deploy:name" component={DeployComponent}>
         		<IndexRoute components={{'appList': appList}} />
         	</Route>
         	<Route path='*' component={NotFound} />

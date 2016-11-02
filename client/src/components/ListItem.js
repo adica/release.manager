@@ -39,7 +39,7 @@ class Selection extends Component {
                <CardTitle title={item.val} subtitle={item.desc} />
               <CardActions>
                   <RaisedButton label="Release" />
-                  <RaisedButton label="Deploy" href="#deploy" />
+                  <RaisedButton label="Deploy" href={"#deploy:" + item.val} /> 
               </CardActions>
             </Card>
           </div>

@@ -19,7 +19,10 @@ class DeployComponent extends React.Component {
 
   render() {
     //const data = this.props;
-    //console.log(JSON.parse(this.props.appList.type));
+    //console.log(this.props.appList.type);
+    //console.log(this.props.routeParams.name);
+    //const component = this.props.appList.type.filter((item)=> item.val == this.props.routeParams.name);
+    //console.log(component)
 
     return (
     	<div>
