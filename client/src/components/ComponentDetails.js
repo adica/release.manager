@@ -11,7 +11,7 @@ class ComponentDetails extends React.Component {
 		return (
 			<div>
 				<List>
-			      <ListItem primaryText={'Name: ' + data.val} leftIcon={<ActionGrade/>} />
+			      <ListItem primaryText={'Name: ' + data.name} leftIcon={<ActionGrade/>} />
 			      <ListItem primaryText="Latest Build: v1.9.11" leftIcon={<ActionBuild />} />
 			      <ComponentVersions details={data} />
 			    </List>

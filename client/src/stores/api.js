@@ -1,5 +1,9 @@
 
+import github from './github.js';
+
 const exports = module.exports = {};
+
+exports.org = "sarinetechnologies";
 
 exports.envs = [
 	{ 'key' : 'qa4', 'val' : 'QA4'},
@@ -9,47 +13,53 @@ exports.envs = [
 
 exports.findAppByName = function (name) {
   return this.apps.filter((app)=> {
-    return app.val === name;
+    return app.name === name;
   })[0];
 };
 
 
 exports.apps = [
       {
-        'key' : 'sarine.viewer.templates.widget',
-        'val' : 'BASEWIDGET',
+        'repo' : 'sarine.viewer.templates.widget',
+        'name' : 'BASEWIDGET',
         'desc' : 'Base Widget',
-        'icon' : 'Roundicons-22.svg'
+        'icon' : 'Roundicons-22.svg',
+        'enable': true
       },
       {
-        'key' : 'sarine.viewer.templates.dashboard',
-        'val' : 'BASEDASHBOARD',
+        'repo' : 'sarine.viewer.templates.dashboard',
+        'name' : 'BASEDASHBOARD',
         'desc' : 'Base Dashboard',
-        'icon' : 'Roundicons-24.svg'
+        'icon' : 'Roundicons-24.svg',
+        'enable': true
       },
       {
-        'key' : 'sarine.viewer.3dfullinspection',
-        'val' : '3D-ATOM',
+        'repo' : 'sarine.viewer.3dfullinspection',
+        'name' : '3D-ATOM',
         'desc' : '3D Atom',
-        'icon' : 'Roundicons-30.svg'
+        'icon' : 'Roundicons-30.svg',
+        'enable': true
       },
       {
-        'key' : 'sarine.viewer.templates.jewelry',
-        'val' : 'BASEJEWELRY',
+        'repo' : 'sarine.viewer.templates.jewelry',
+        'name' : 'BASEJEWELRY',
         'desc' : 'Base Jewelry',
-        'icon' : 'Roundicons-54.svg'
+        'icon' : 'Roundicons-54.svg',
+        'enable': false
       },
       {
-        'key' : 'sarine.viewer.core',
-        'val' : 'CORE',
+        'repo' : 'sarine.viewer.core',
+        'name' : 'CORE',
         'desc' : 'Viewer Core',
-        'icon' : 'Roundicons-55.svg'
+        'icon' : 'Roundicons-55.svg',
+        'enable': false
       },
       {
-        'key' : 'sarine.viewer.templates.fullscreen',
-        'val' : 'FULLSCREEN',
+        'repo' : 'sarine.viewer.templates.fullscreen',
+        'name' : 'FULLSCREEN',
         'desc' : 'Base Full Screen',
-        'icon' : 'Roundicons-60.svg'
+        'icon' : 'Roundicons-60.svg',
+        'enable': false
       }
    ];
 

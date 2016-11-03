@@ -31,15 +31,15 @@ class Selection extends Component {
     return (
       <div>
         {list.map((item) => {
-          return <div key={item.key} style={compoenentStyle.base}>
+          return <div key={item.repo} style={compoenentStyle.base}>
             <Card>
               <CardMedia>
                 <img src={'/images/' + item.icon} />
               </CardMedia>
-               <CardTitle title={item.val} subtitle={item.desc} />
+               <CardTitle title={item.name} subtitle={item.desc} />
               <CardActions>
                   <RaisedButton label="Release" />
-                  <RaisedButton label="Deploy" href={'#deploy/' + item.val} />
+                  <RaisedButton label="Deploy" href={'#deploy/' + item.name} />
               </CardActions>
             </Card>
           </div>
